@@ -19,6 +19,9 @@ npm start
 ## Exploring the app
 Once you're set up, you can visit default URL`http://localhost:3000`. There is a terminal input where you can write an expression. Then press enter or click on evaluate button to get the response for given expression.
 
+## Related Projects
+This repo is a solution for [aimo code challenge](https://github.com/aimo/challenges/tree/main):
+
 ### TODO
 - [ ] Frontend: handle bad request or server errors
 - [ ] Add env vars for deployment
