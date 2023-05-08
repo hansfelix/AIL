@@ -2,12 +2,12 @@
   "name": "runtime",
   "version": "1.0.0",
   "description": "Another lisp language JSON compatible",
-  "main": "index.ts",
+  "main": "",
   "scripts": {
     "test:unit": "jest --testPathIgnorePatterns functional",
     "test:functional": "jest --testPathIgnorePatterns src",
     "build": "npx tsc",
-    "start": "npm run start --workspace=server",
+    "start": "npm run start",
     "fmt": "prettier --write ."
   },
   "author": "Luis Gerardo Manrique",
@@ -20,13 +20,5 @@
     "ts-jest": "^29.0.4"
   },
   "dependencies": {
-    "@koa/cors": "^4.0.0",
-    "@koa/router": "^12.0.0",
-    "koa": "^2.14.1",
-    "koa-body": "^6.0.1"
-  },
-  "workspaces": [
-    "packages/server",
-    "packages/runtime"
-  ]
+  }
 }

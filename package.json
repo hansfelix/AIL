@@ -3,10 +3,12 @@
     "version": "1.0.0",
     "description": "Another lisp language JSON compatible",
     "scripts": {
-        "test": "npm run test --workspace=runtime",
+        "runtime:build": "npm run build --workspace=runtime",
         "test:unit": "npm run test:unit --workspace=runtime",
         "test:functional": "npm run test:functional --workspace=runtime",
-        "start": "npm run start --workspace=server",
+        "server:start": "npm run start --workspace=server",
+        "server:start:dev": "npm run start:dev --workspace=server",
+        "server:build": "npm run build --workspace=server",
         "frontend:dev": "npm run dev --workspace=frontend"
     },
     "author": "Luis Gerardo Manrique",

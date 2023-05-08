@@ -34,4 +34,35 @@ describe("evaluate cases", () => {
   test.each(cases)("evaluate($name) -> $output", ({ input, output }) => {
     expect(evaluate(input)).toStrictEqual(output);
   });
+
+  // TODo add Lower Case
+  test("incorrect payload in StringToLower", () => {
+    const $if: Expression = {
+      type: ExpressionType.StringToLower,
+      payload: {
+        value: {
+          type: ExpressionType.Const,
+          payload: {
+            value: "HI!",
+          },
+        },
+      },
+    };
+    expect(evaluate($if)).toStrictEqual("hi!");
+  });
+
+  test("incorrect payload in StringToLower", () => {
+    const $if: Expression = {
+      type: ExpressionType.StringToUpper,
+      payload: {
+        value: {
+          type: ExpressionType.Const,
+          payload: {
+            value: "ss",
+          },
+        },
+      },
+    };
+    expect(evaluate($if)).toStrictEqual("SS");
+  });
 });
