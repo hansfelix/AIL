@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import axios from 'axios';
 
-const shipUrl = `${import.meta.env.VITE_SHIP_URL}/api`;
+const shipUrl = `${import.meta.env.VITE_SHIP_URL}/api/api`;
 defineProps<{ msg: string }>()
 
 const inputForm = ref("");
