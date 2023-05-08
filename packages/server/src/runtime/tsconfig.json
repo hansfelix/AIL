@@ -1,12 +1,12 @@
 {
   "include": ["src/**/*.ts"],
   "compilerOptions": {
-    "rootDir": "./",
+    // "rootDir": "./",
     "baseUrl": "./src",
     "esModuleInterop": true,
     "outDir": "build",
-    "composite": true
+    "composite": true,
+    "rootDir": "src",
   },
-  "composite": true,
   "exclude": ["build", "node_modules"],
 }

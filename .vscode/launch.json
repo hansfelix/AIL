@@ -14,7 +14,8 @@
             "program": "${workspaceFolder}\\packages\\server\\src\\main.ts",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
-            ]
+            ],
+            "outputCapture": "std"
         }
     ]
 }

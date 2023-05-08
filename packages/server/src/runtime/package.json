@@ -2,7 +2,7 @@
   "name": "@ail/runtime",
   "version": "1.0.0",
   "description": "Another lisp language JSON compatible",
-  "main": "jest.config.js",
+  "main": "src/runtime/evaluation.ts",
   "scripts": {
     "test:unit": "jest --testPathIgnorePatterns functional",
     "test:functional": "jest --testPathIgnorePatterns src",

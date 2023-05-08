@@ -17,12 +17,11 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "composite": true
+    "composite": true,
   },
-  "composite": true,
   "references": [
     {
-      "path": "../runtime"
+      "path": "../runtime2"
     }
   ]
 }
