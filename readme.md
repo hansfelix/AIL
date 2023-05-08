@@ -15,6 +15,7 @@ npm run server:start
 // TODO
 
 ### TODO
+- [ ] Complete tests definition
 - [ ] Frontend: handle bad request or server errors
 - [ ] Backend: use lang as global types 
 - [ ] Separate runtime in another npm worspace packages
