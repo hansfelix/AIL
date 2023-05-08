@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "Another lisp language JSON compatible",
     "scripts": {
+        "build": "npm run build --workspaces --if-present",
         "runtime:build": "npm run build --workspace=runtime",
         "test:unit": "npm run test:unit --workspace=runtime",
         "test:functional": "npm run test:functional --workspace=runtime",
@@ -23,6 +24,8 @@
     },
     "dependencies": {},
     "workspaces": [
-        "packages/*"
+        "packages/frontend",
+        "packages/runtime",
+        "packages/server"
     ]
 }

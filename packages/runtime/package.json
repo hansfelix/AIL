@@ -2,7 +2,7 @@
   "name": "runtime",
   "version": "1.0.0",
   "description": "Another lisp language JSON compatible",
-  "main": "",
+  "main": "jest.config.js",
   "scripts": {
     "test:unit": "jest --testPathIgnorePatterns functional",
     "test:functional": "jest --testPathIgnorePatterns src",
@@ -19,6 +19,15 @@
     "prettier": "^2.8.2",
     "ts-jest": "^29.0.4"
   },
-  "dependencies": {
-  }
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansfelix/AIL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hansfelix/AIL/issues"
+  },
+  "homepage": "https://github.com/hansfelix/AIL#readme"
 }
