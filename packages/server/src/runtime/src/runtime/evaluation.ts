@@ -1,121 +1,131 @@
-import { Expression } from "../lang/Expressions";
-import { ExpressionType } from "../lang/ExpressionTypes";
+import { retry } from 'rxjs';
+import { Expression } from '../lang/Expressions';
+import { ExpressionType } from '../lang/ExpressionTypes';
 
 // TODO: implement evaluate expression to accomplish tests
 export function evaluate(expression: Expression): any {
-  let response: string | boolean | number = "";
+  // posible response types
+  let response: string | boolean | number = '';
 
   switch (expression.type) {
     case ExpressionType.If:
-      const ifFalse = expression.payload.if_false;
-      const ifTrue = expression.payload.if_true;
-      const testExpression = expression.payload.test_expression;
-
-      // Evaluate testExpression
-      const responseTestExpression = evaluate(testExpression);
-
-      // validate testExpression
-      if (responseTestExpression) {
-        response = evaluate(ifTrue);
-      } else {
-        response = evaluate(ifFalse);
-      }
+      response = evalIf(
+        expression.payload.if_true,
+        expression.payload.if_false,
+        expression.payload.test_expression,
+      );
       break;
 
     case ExpressionType.And:
-      response = evalAnd(expression.payload);
+      response = evalAnd(expression.payload.expressions);
       break;
 
     case ExpressionType.Or:
-      response = evalOr(expression.payload);
+      response = evalOr(expression.payload.expressions);
       break;
 
     case ExpressionType.Not:
-      response = evalNot(expression.payload);
+      response = evalNot(expression.payload.expression);
       break;
 
+    // Case const return the value without any transformation
     case ExpressionType.Const:
       response = expression.payload.value;
       break;
 
     case ExpressionType.Eq:
-      response = evalEqual(expression.payload);
+      response = evalEqual(expression.payload.left, expression.payload.right);
       break;
 
     case ExpressionType.StringToUpper:
-      response = evalStringToUpper(expression.payload);
+      response = evalStringToUpper(expression.payload.value);
       break;
 
     case ExpressionType.StringToLower:
-      response = evalStringToLower(expression.payload);
+      response = evalStringToLower(expression.payload.value);
       break;
 
     default:
+      // TODO: trown an exeption and exit recursive flow
+      response = "Expression type not allowed"
       break;
   }
 
   return response;
 }
 
-function evalAnd(payload: { expressions: Expression[] }): boolean {
+function evalIf(
+  ifTrue: Expression,
+  ifFalse: Expression,
+  testExpression: Expression,
+): boolean {
+  // between ifTrue and ifFalse expressions, just evaluate one
+  // it depends on responseTestExpression
+  const responseTestExpression = evaluate(testExpression);
+  return responseTestExpression ? evaluate(ifTrue) : evaluate(ifFalse);
+}
+
+function evalAnd(expressions: Expression[]): boolean {
+  // Iterate each expression in array and store in responseExpressions
+  // TODO: evaluate can return number and string, so we cand send and alert if type is diferent to boolean
+  //       same to evalOr function.
   const responseExpressions = [];
 
-  for (let expression of payload.expressions) {
+  for (let expression of expressions) {
     const responseExpression = evaluate(expression);
     responseExpressions.push(responseExpression);
   }
 
+  // with reduce we can evaluate all boolean elements inside responseExpressions array
   return responseExpressions.reduce((a, b) => a && b);
 }
 
-function evalOr(payload: { expressions: Expression[] }): boolean {
+function evalOr(expressions: Expression[]): boolean {
+  // Iterate each expression in array and store in responseExpressions
+  // TODO: evaluate can return number and string, so we cand send and alert if type is diferent to boolean
+  //       same to evalAnd function.
   const responseExpressions = [];
 
-  for (let expression of payload.expressions) {
+  for (let expression of expressions) {
     const responseExpression = evaluate(expression);
     responseExpressions.push(responseExpression);
   }
 
+  // with reduce we can evaluate all boolean elements inside responseExpressions array
   return responseExpressions.reduce((a, b) => a || b);
 }
 
-function evalNot(payload: { expression: Expression }): boolean {
-  // First evaluate Expression inside payload
-  const responseExpressionInPayload = evaluate(payload.expression);
-
-  // TODO: check boolean and string
+function evalNot(expression: Expression): boolean {
+  // TODO: evaluate can return number and string, so we cand send and alert if type is diferent to boolean
+  const responseExpressionInPayload = evaluate(expression);
   return !responseExpressionInPayload;
 }
 
-// TODO: if only exist an equal must return an string?
-function evalEqual(payload: { left: Expression; right: Expression }): boolean {
-  // First evaluate Expression inside payload
-  const responseLeftExpression = evaluate(payload.left);
-  const responseRightExpression = evaluate(payload.right);
-
+function evalEqual(left: Expression, right: Expression): boolean {
+  // TODO: evaluate can return number and string, so we cand send and alert if type is diferent to boolean
+  const responseLeftExpression = evaluate(left);
+  const responseRightExpression = evaluate(right);
   return responseLeftExpression === responseRightExpression ? true : false;
 }
 
-function evalStringToUpper(payload: { value: Expression }): string {
-  const expressionInPayload = payload.value;
-  // First evaluate Expression inside payload
-  const responseExpressionInPayload = evaluate(expressionInPayload);
+function evalStringToUpper(expression: Expression): string {
+  const responseExpression = evaluate(expression);
 
-  if (!(typeof responseExpressionInPayload === "string")) {
-    return "Invalid string";
+  // Here's a simple validations for a type diferent from string like boolean and number
+  // TODO: give more hints in this response
+  if (!(typeof responseExpression === 'string')) {
+    return 'Invalid string';
   }
-
-  return responseExpressionInPayload.toUpperCase();
+  return responseExpression.toUpperCase();
 }
 
-function evalStringToLower(payload: { value: Expression }): string {
-  const expressionInPayload = payload.value;
-  // First evaluate Expression inside payload
-  const responseExpressionInPayload = evaluate(expressionInPayload);
+function evalStringToLower(expression: Expression): string {
+  // Here's a simple validations for a type diferent from string like boolean and number
+  // TODO: give more hints in this response
+  const responseExpression = evaluate(expression);
 
-  if (!(typeof responseExpressionInPayload === "string")) {
-    return "Invalid string";
+  if (!(typeof responseExpression === 'string')) {
+    return 'Invalid string';
   }
-
-  return responseExpressionInPayload.toLowerCase();
+  return responseExpression.toLowerCase();
 }
