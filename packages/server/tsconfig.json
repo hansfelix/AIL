@@ -21,7 +21,7 @@
   },
   "references": [
     {
-      "path": "../runtime2"
+      "path": "../runtime"
     }
   ]
 }

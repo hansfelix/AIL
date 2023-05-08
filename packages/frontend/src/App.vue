@@ -1,30 +1,42 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import Form from './components/Form/Form.vue'
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <section class="layout">
+    <main class="layout__content">
+      <Form msg="Vite + Vue" />
+    </main>
+
+    <footer class="footer">This web is a code challenge, developed by Hans Felix, more info
+      <a href="https://github.com/aimo/challenges/tree/main">here</a>
+    </footer>
+  </section>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<style lang="scss">
+@import "@/assets/global.scss";
+
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background-image: url('/imgs/background.jpg');
+  background-position: center;
+  background-size: cover;
+
+  &__content {
+    height: 100%;
+    align-self: center;
+    justify-self: stretch;
+    overflow: hidden;
+  }
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.footer {
+  background-color: rgb(0 0 0 / 75%);
+  z-index: 200;
+  padding: 0.75rem 2rem;
 }
 </style>
