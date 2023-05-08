@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref } from 'vue';
 import axios from 'axios';
 
+const shipUrl = `${import.meta.env.VITE_SHIP_URL}/api`;
 defineProps<{ msg: string }>()
 
 const inputForm = ref("");
@@ -12,7 +13,7 @@ async function evaluateInput() {
     console.log(inputForm.value)
     // 👇️ const data: GetUsersResponse
     const { data, status } = await axios.post<string>(
-      'http://localhost:3000/api',
+      shipUrl,
       JSON.parse(inputForm.value),
       {
         headers: {
@@ -134,8 +135,8 @@ async function evaluateInput() {
     transform: translate(-25%, 15%);
   }
 
-  &
-  // HEADER
+  & // HEADER
+
   // ------------------------------------------------
   &__header {
     background: #E0E8F0;
@@ -181,11 +182,11 @@ async function evaluateInput() {
     padding: 0.5rem 0.5rem 0.25rem 0.5rem;
   }
 
-  &__input-container-header{
+  &__input-container-header {
     display: flex;
     justify-content: space-between;
   }
-  
+
   &__input {
     width: 100%;
     border: 0;
