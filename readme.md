@@ -2,6 +2,17 @@
 Como parte de el proyecto Artemisa 1 🚀, donde se pondra en orbita la nave espacial Orion durante 25 dias, se require contar con un lenguaje de programacion al interior de la nave que pueda ser ejecutado en cualquier momento, sin necesidad de compilacion, por medio de peticiones http usando formato JSON.
 
 ![screenshot](/images/browser.png)
+### Requiremets
+- Node.js v15+ or npm v7+
+
+### Install
+```
+npm install
+npm run server:start
+```
+
+### Architecture
+// TODO
 
 ### TODO
 - [ ] Frontend: handle bad request or server errors
