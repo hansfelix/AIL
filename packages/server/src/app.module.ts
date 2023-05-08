@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { ApiModule } from './api/api.module';
+import { EvaluateModule } from './evaluate/evaluate.module';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 
 @Module({
   imports: [
-    ApiModule,
+    EvaluateModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '../..', '/client'),
     }),

@@ -1,15 +1,15 @@
 import { Controller, Post, Body } from '@nestjs/common';
-import { ApiService } from './api.service';
+import { EvaluateService } from './evaluate.service';
 import { CreateApiDto } from './dto/create-api.dto';
 
 import { Expression } from './../runtime/src/lang/Expressions';
 
 @Controller('api')
-export class ApiController {
-  constructor(private readonly apiService: ApiService) {}
+export class EvaluateController {
+  constructor(private readonly evaluateService: EvaluateService) {}
 
   @Post()
   create(@Body() createApiDto: Expression) {
-    return this.apiService.create(createApiDto);
+    return this.evaluateService.create(createApiDto);
   }
 }

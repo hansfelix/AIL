@@ -5,7 +5,7 @@ import { evaluate } from './../runtime/src/runtime/evaluation';
 import { Expression } from './../runtime/src/lang/Expressions';
 
 @Injectable()
-export class ApiService {
+export class EvaluateService {
   create(createApiDto: Expression) {
     // Map Entity
 
