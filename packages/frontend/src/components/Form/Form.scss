@@ -1,6 +1,6 @@
 @import "@/assets/global.scss";
 
-// TITLE
+// FORM-LAYOUT
 // ================================================================
 .form-layout {
     display: flex;
@@ -17,9 +17,9 @@
     }
 }
 
-// TITLE
+// INTRODUCTION
 // ================================================================
-.introduction-container {
+.introduction {
     color: white;
     padding: 0.7rem;
     margin: 2rem 0.7rem 5rem 0.7rem;
@@ -44,8 +44,9 @@
 // TERMINAL
 // ================================================================
 .terminal {
+    width: 100%;
     position: relative; // calc left rocket imagen from this as relative
-    margin: 0.7rem; // Margin in mobile for limits to windows
+    margin: 0.7rem; // margin in mobile for limits to windows
     font-family: "Consolas", "Courier New", "Courier"; // monospace font for terminal
     z-index: 100;
 
