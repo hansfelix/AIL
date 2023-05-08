@@ -50,10 +50,10 @@ watch(inputForm, async () => {
 
 <template>
   <section class="form-layout">
-    <section class="introduction-container">
+    <div class="form-layout__top introduction-container">
       <h1 class="introduction-container__title">Welcome to <strong>AIL</strong></h1>
       <h3 class="introduction-container__subtitle">Programming language for Artemisa 1 🚀</h3>
-    </section>
+    </div>
     <div class="form-layout__bottom">
       <section class="form-layout__bottom terminal__wrapper">
         <form class="terminal">

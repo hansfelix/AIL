@@ -1,11 +1,13 @@
 @import "@/assets/global.scss";
 
+// TITLE
+// ================================================================
 .form-layout {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 100%; // fill all space from parent layout
 
-    // In bottom its placed terminal, so it has all space remaining
+    // In bottom section its placed terminal, so it has all space remaining
     // and also always center elements inside (terminal and rocket)
     &__bottom {
         flex: 1;
@@ -14,6 +16,7 @@
         place-items: center;
     }
 }
+
 // TITLE
 // ================================================================
 .introduction-container {
