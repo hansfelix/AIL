@@ -15,10 +15,11 @@ npm run server:start
 // TODO
 
 ### TODO
+- [ ] Frontend: handle bad request or server errors
 - [ ] Add env vars for deployment
 - [ ] Complete tests definition
-- [ ] Frontend: handle bad request or server errors
 - [ ] Backend: use lang as global types 
 - [ ] Separate runtime in another npm worspace packages
 - [ ] Frontend: add clouds for the bottom
 - [ ] Frontend: improve background, create a component and render elements with svg and html
+- [ ] Improve Accesibility

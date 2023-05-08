@@ -1,0 +1,155 @@
+@import "@/assets/global.scss";
+
+.form-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    // In bottom its placed terminal, so it has all space remaining
+    // and also always center elements inside (terminal and rocket)
+    &__bottom {
+        flex: 1;
+
+        display: grid;
+        place-items: center;
+    }
+}
+// TITLE
+// ================================================================
+.introduction-container {
+    color: white;
+    padding: 0.7rem;
+    margin: 2rem 0.7rem 5rem 0.7rem;
+    border-left: 2px solid;
+
+    @include mq($from: tablet) {
+        margin: 1.5rem 0.7rem 1.5rem 2rem;
+        padding-left: 1.5rem;
+    }
+
+    &__title {
+        font-size: 2.25rem;
+        font-weight: 400;
+    }
+
+    &__subtitle {
+        font-size: 1.15rem;
+        font-weight: 400;
+    }
+}
+
+// TERMINAL
+// ================================================================
+.terminal {
+    position: relative; // calc left rocket imagen from this as relative
+    margin: 0.7rem; // Margin in mobile for limits to windows
+    font-family: "Consolas", "Courier New", "Courier"; // monospace font for terminal
+    z-index: 100;
+
+    @include mq($from: tablet) {
+        transform: translateX(30%);
+        margin: 0; // avoid margin to windows, there is enought space
+    }
+
+    &__wrapper {
+        position: relative;
+        max-width: 400px;
+        width: 100%;
+        margin: 0 auto; // center wrapper horizontal due to have a max-width defined
+    }
+
+    &__rocket {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        transform: translate(-30%, 10%);
+    }
+
+    & // HEADER
+
+  // ------------------------------------------------
+  &__header {
+        background: #e0e8f0;
+        height: 1.875rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+        padding-left: 0.625rem;
+    }
+
+    &__header-circle {
+        width: 12px;
+        height: 12px;
+        margin: 10px 10px 0 0;
+        display: inline-block;
+        border-radius: 50%;
+    }
+
+    &__header-circle--green {
+        background: #3bb662;
+    }
+
+    &__header-circle--yellow {
+        background: #e5c30f;
+    }
+
+    &__header-circle--red {
+        background: #e75448;
+    }
+
+    // BODY
+    // ------------------------------------------------
+    &__body {
+        color: white;
+        font-size: 1rem;
+        background: #30353a;
+        border-radius: 0 0 0.5rem 0.5rem;
+    }
+
+    // INPUT
+    // ------------------------------------------------
+    &__input-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+    }
+
+    &__input-container-header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__input {
+        width: 100%;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        border: 1px solid transparent;
+        font-size: 1rem;
+    }
+
+    &__input:focus-visible,
+    &__input:focus {
+        outline: none; // remove default browser outline
+        border-color: rgb(0 0 0 / 32%);
+    }
+
+    // OUTPUT
+    // ------------------------------------------------
+    &__output-container {
+        padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+        border-top: 1px solid #4c4c4c;
+        display: flex;
+    }
+
+    &__output {
+        flex: 1;
+        border: 0;
+        background-color: transparent;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    &__output-text {
+        margin-right: 12px;
+    }
+}
