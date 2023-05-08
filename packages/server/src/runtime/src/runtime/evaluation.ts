@@ -47,7 +47,7 @@ export function evaluate(expression: Expression): any {
 
     default:
       // TODO: trown an exeption and exit recursive flow
-      response = "Expression type not allowed"
+      response = 'Expression type not allowed';
       break;
   }
 
@@ -71,7 +71,7 @@ function evalAnd(expressions: Expression[]): boolean {
   //       same to evalOr function.
   const responseExpressions = [];
 
-  for (let expression of expressions) {
+  for (const expression of expressions) {
     const responseExpression = evaluate(expression);
     responseExpressions.push(responseExpression);
   }
@@ -86,7 +86,7 @@ function evalOr(expressions: Expression[]): boolean {
   //       same to evalAnd function.
   const responseExpressions = [];
 
-  for (let expression of expressions) {
+  for (const expression of expressions) {
     const responseExpression = evaluate(expression);
     responseExpressions.push(responseExpression);
   }

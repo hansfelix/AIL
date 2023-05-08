@@ -1,5 +1,5 @@
-import { BaseExpression } from "./BaseExpression";
-import { ExpressionType } from "./ExpressionTypes";
+import { BaseExpression } from './BaseExpression';
+import { ExpressionType } from './ExpressionTypes';
 
 export type If = BaseExpression<
   ExpressionType.If,

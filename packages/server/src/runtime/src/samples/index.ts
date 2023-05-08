@@ -1,20 +1,20 @@
-import { Expression } from "../lang/Expressions";
-import { ExpressionType } from "../lang/ExpressionTypes";
-import { complexIf } from "./complex-if";
+import { Expression } from '../lang/Expressions';
+import { ExpressionType } from '../lang/ExpressionTypes';
+import { complexIf } from './complex-if';
 
 export const cases: Array<{ name: string; input: Expression; output: any }> = [
   {
-    name: "const string value",
+    name: 'const string value',
     input: {
       type: ExpressionType.Const,
       payload: {
-        value: "hello world!",
+        value: 'hello world!',
       },
     },
-    output: "hello world!",
+    output: 'hello world!',
   },
   {
-    name: "const bool value",
+    name: 'const bool value',
     input: {
       type: ExpressionType.Const,
       payload: {
@@ -24,7 +24,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: false,
   },
   {
-    name: "and should be false",
+    name: 'and should be false',
     input: {
       type: ExpressionType.And,
       payload: {
@@ -47,7 +47,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: false,
   },
   {
-    name: "and should be true",
+    name: 'and should be true',
     input: {
       type: ExpressionType.And,
       payload: {
@@ -70,7 +70,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: true,
   },
   {
-    name: "or should be true on all true",
+    name: 'or should be true on all true',
     input: {
       type: ExpressionType.Or,
       payload: {
@@ -93,7 +93,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: true,
   },
   {
-    name: "or should be true on at least one true",
+    name: 'or should be true on at least one true',
     input: {
       type: ExpressionType.Or,
       payload: {
@@ -122,7 +122,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: true,
   },
   {
-    name: "or should be false with only one false",
+    name: 'or should be false with only one false',
     input: {
       type: ExpressionType.Or,
       payload: {
@@ -151,7 +151,7 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: true,
   },
   {
-    name: "if combined with not",
+    name: 'if combined with not',
     input: {
       type: ExpressionType.If,
       payload: {
@@ -169,49 +169,49 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
         if_true: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is true",
+            value: 'test expression is true',
           },
         },
         if_false: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is false",
+            value: 'test expression is false',
           },
         },
       },
     },
-    output: "test expression is false",
+    output: 'test expression is false',
   },
   {
-    name: "string to lower",
+    name: 'string to lower',
     input: {
       type: ExpressionType.StringToLower,
       payload: {
         value: {
           type: ExpressionType.Const,
           payload: {
-            value: "HI!",
+            value: 'HI!',
           },
         },
       },
     },
-    output: "hi!",
+    output: 'hi!',
   },
   {
-    name: "equal on same values",
+    name: 'equal on same values',
     input: {
       type: ExpressionType.Eq,
       payload: {
         left: {
           type: ExpressionType.Const,
           payload: {
-            value: "hi",
+            value: 'hi',
           },
         },
         right: {
           type: ExpressionType.Const,
           payload: {
-            value: "hi",
+            value: 'hi',
           },
         },
       },
@@ -219,20 +219,20 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: true,
   },
   {
-    name: "equal on different values",
+    name: 'equal on different values',
     input: {
       type: ExpressionType.Eq,
       payload: {
         left: {
           type: ExpressionType.Const,
           payload: {
-            value: "hi!",
+            value: 'hi!',
           },
         },
         right: {
           type: ExpressionType.Const,
           payload: {
-            value: "hi",
+            value: 'hi',
           },
         },
       },
@@ -240,27 +240,27 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
     output: false,
   },
   {
-    name: "complex if",
+    name: 'complex if',
     input: complexIf,
-    output: "inside first if true, and next if false",
+    output: 'inside first if true, and next if false',
   },
   {
-    name: "string to upper",
+    name: 'string to upper',
     input: {
       type: ExpressionType.StringToUpper,
       payload: {
         value: {
           type: ExpressionType.Const,
           payload: {
-            value: "hi!",
+            value: 'hi!',
           },
         },
       },
     },
-    output: "HI!",
+    output: 'HI!',
   },
   {
-    name: "if when test expression is false",
+    name: 'if when test expression is false',
     input: {
       type: ExpressionType.If,
       payload: {
@@ -273,21 +273,21 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
         if_true: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is true",
+            value: 'test expression is true',
           },
         },
         if_false: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is false",
+            value: 'test expression is false',
           },
         },
       },
     },
-    output: "test expression is false",
+    output: 'test expression is false',
   },
   {
-    name: "if when test expression is true",
+    name: 'if when test expression is true',
     input: {
       type: ExpressionType.If,
       payload: {
@@ -300,17 +300,17 @@ export const cases: Array<{ name: string; input: Expression; output: any }> = [
         if_true: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is true",
+            value: 'test expression is true',
           },
         },
         if_false: {
           type: ExpressionType.Const,
           payload: {
-            value: "test expression is false",
+            value: 'test expression is false',
           },
         },
       },
     },
-    output: "test expression is true",
+    output: 'test expression is true',
   },
 ];

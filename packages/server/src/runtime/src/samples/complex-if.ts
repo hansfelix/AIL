@@ -1,5 +1,5 @@
-import { Expression } from "../lang/Expressions";
-import { ExpressionType } from "../lang/ExpressionTypes";
+import { Expression } from '../lang/Expressions';
+import { ExpressionType } from '../lang/ExpressionTypes';
 
 export const complexIf: Expression = {
   type: ExpressionType.If,
@@ -27,13 +27,13 @@ export const complexIf: Expression = {
                             left: {
                               type: ExpressionType.Const,
                               payload: {
-                                value: "hi!",
+                                value: 'hi!',
                               },
                             },
                             right: {
                               type: ExpressionType.Const,
                               payload: {
-                                value: "hi",
+                                value: 'hi',
                               },
                             },
                           },
@@ -70,13 +70,13 @@ export const complexIf: Expression = {
         if_true: {
           type: ExpressionType.Const,
           payload: {
-            value: "inside first if true, and next if true",
+            value: 'inside first if true, and next if true',
           },
         },
         if_false: {
           type: ExpressionType.Const,
           payload: {
-            value: "inside first if true, and next if false",
+            value: 'inside first if true, and next if false',
           },
         },
       },
