@@ -1,0 +1,27 @@
+{
+  "name": "@ail/core",
+  "version": "1.0.0",
+  "description": "core for ail - Another interpreted language",
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@jest/globals": "^29.3.1",
+    "@types/jest": "^29.2.5",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.4"
+  },
+  "scripts": {
+    "build": "npx tsc --build",
+    "test:unit": "jest --testPathIgnorePatterns src/test/evaluation"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansfelix/AIL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansfelix/AIL/issues"
+  },
+  "homepage": "https://github.com/hansfelix/AIL#readme"
+}

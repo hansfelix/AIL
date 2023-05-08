@@ -1,0 +1,68 @@
+import { Expression } from '../lang/Expressions';
+import { ExpressionType } from '../lang/ExpressionTypes';
+import { cases } from './cases';
+import { evaluate } from '../runtime/evaluation';
+
+describe('evaluate cases', () => {
+  test('if should return false', () => {
+    const $if: Expression = {
+      type: ExpressionType.If,
+      payload: {
+        test_expression: {
+          type: ExpressionType.Const,
+          payload: {
+            value: false,
+          },
+        },
+        if_true: {
+          type: ExpressionType.Const,
+          payload: {
+            value: 'test expression is true',
+          },
+        },
+        if_false: {
+          type: ExpressionType.Const,
+          payload: {
+            value: 'test expression is false',
+          },
+        },
+      },
+    };
+    expect(evaluate($if)).toStrictEqual('test expression is false');
+  });
+
+  test.each(cases)('evaluate($name) -> $output', ({ input, output }) => {
+    expect(evaluate(input)).toStrictEqual(output);
+  });
+
+  // TODo add Lower Case
+  test('incorrect payload in StringToLower', () => {
+    const $if: Expression = {
+      type: ExpressionType.StringToLower,
+      payload: {
+        value: {
+          type: ExpressionType.Const,
+          payload: {
+            value: 'HI!',
+          },
+        },
+      },
+    };
+    expect(evaluate($if)).toStrictEqual('hi!');
+  });
+
+  test('incorrect payload in StringToLower', () => {
+    const $if: Expression = {
+      type: ExpressionType.StringToUpper,
+      payload: {
+        value: {
+          type: ExpressionType.Const,
+          payload: {
+            value: 'ss',
+          },
+        },
+      },
+    };
+    expect(evaluate($if)).toStrictEqual('SS');
+  });
+});
