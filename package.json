@@ -1,5 +1,5 @@
 {
-    "name": "@ail",
+    "name": "ail",
     "version": "1.0.0",
     "description": "Another lisp language JSON compatible",
     "scripts": {
