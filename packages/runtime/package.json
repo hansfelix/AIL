@@ -1,5 +1,5 @@
 {
-  "name": "runtime",
+  "name": "@ail/runtime",
   "version": "1.0.0",
   "description": "Another lisp language JSON compatible",
   "main": "jest.config.js",
@@ -29,5 +29,6 @@
   "bugs": {
     "url": "https://github.com/hansfelix/AIL/issues"
   },
-  "homepage": "https://github.com/hansfelix/AIL#readme"
+  "homepage": "https://github.com/hansfelix/AIL#readme",
+  "keywords": []
 }

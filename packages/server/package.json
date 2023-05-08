@@ -1,7 +1,7 @@
 {
-  "name": "server",
+  "name": "@ail/server",
   "version": "0.0.1",
-  "description": "",
+  "description": "<p align=\"center\">   <a href=\"http://nestjs.com/\" target=\"blank\"><img src=\"https://nestjs.com/img/logo-small.svg\" width=\"200\" alt=\"Nest Logo\" /></a> </p>",
   "author": "",
   "private": true,
   "license": "UNLICENSED",
@@ -47,7 +47,8 @@
     "ts-jest": "29.0.5",
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
-    "tsconfig-paths": "4.2.0"
+    "tsconfig-paths": "4.2.0",
+    "typescript": "^4.9.4"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -65,5 +66,18 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  }
+  },
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansfelix/AIL.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/hansfelix/AIL/issues"
+  },
+  "homepage": "https://github.com/hansfelix/AIL#readme"
 }

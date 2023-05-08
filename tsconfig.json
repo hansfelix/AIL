@@ -1,0 +1,8 @@
+{
+    "files": [],
+    "references": [
+      { "path": "packages/frontend" },
+      { "path": "packages/server" },
+      { "path": "packages/runtime" }
+    ]
+  }

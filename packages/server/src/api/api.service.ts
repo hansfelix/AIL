@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { CreateApiDto } from './dto/create-api.dto';
 
-import { evaluate } from 'runtime/src/runtime/evaluation';
-import { Expression } from 'runtime/src/lang/Expressions';
+import { evaluate } from '@ail/runtime/src/runtime/evaluation';
+import { Expression } from '@ail/runtime/src/lang/Expressions';
 
 @Injectable()
 export class ApiService {

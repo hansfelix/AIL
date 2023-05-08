@@ -4,7 +4,9 @@
     "rootDir": "./",
     "baseUrl": "./src",
     "esModuleInterop": true,
-    "outDir": "build"
+    "outDir": "build",
+    "composite": true
   },
-  "exclude": ["build", "node_modules"]
+  "composite": true,
+  "exclude": ["build", "node_modules"],
 }
