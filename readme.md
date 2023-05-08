@@ -1,18 +1,23 @@
 # Another interpreted language
 Como parte de el proyecto Artemisa 1 🚀, donde se pondra en orbita la nave espacial Orion durante 25 dias, se require contar con un lenguaje de programacion al interior de la nave que pueda ser ejecutado en cualquier momento, sin necesidad de compilacion, por medio de peticiones http usando formato JSON.
 
-![screenshot](/images/browser.png)
+![screenshot](/images/screenshot-2.png)
 ### Requiremets
 - Node.js v15+ or npm v7+
 
-### Install
+## Quick start
+### Install dependencies
+> This will install all dependencies in each npm worspace.
 ```
 npm install
-npm run server:start
 ```
 
-### Architecture
-// TODO
+After installment, you can build projects and serve the backend by:
+```
+npm start
+```
+## Exploring the app
+Once you're set up, you can visit default URL`http://localhost:3000`. There is a terminal input where you can write an expression. Then press enter or click on evaluate button to get the response for given expression.
 
 ### TODO
 - [ ] Frontend: handle bad request or server errors

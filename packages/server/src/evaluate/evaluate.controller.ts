@@ -4,7 +4,7 @@ import { CreateApiDto } from './dto/create-api.dto';
 
 import { Expression } from './../runtime/src/lang/Expressions';
 
-@Controller('api')
+@Controller('evaluate')
 export class EvaluateController {
   constructor(private readonly evaluateService: EvaluateService) {}
 
