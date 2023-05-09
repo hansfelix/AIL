@@ -2,42 +2,23 @@
 import  "./Form.scss";
 
 import { ref, watch } from 'vue';
-import axios from 'axios';
-
-const shipUrl = `${import.meta.env.VITE_SHIP_URL}/api/evaluate`;
+import {evaluate} from "../../proxy/evaluate.proxy";
 
 const inputForm = ref("");
 const outputForm = ref("");
+const hasError = ref(false);
 
 /**
  * Connect to API and get 
  */
 async function evaluateInput() {
-  try {
-    console.log(inputForm.value)
-    // 👇️ const data: GetUsersResponse
-    const { data, status } = await axios.post<string>(
-      shipUrl,
-      JSON.parse(inputForm.value),
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-      },
-    );
+  const response = await evaluate(inputForm.value);
+  outputForm.value = response.message;
 
-    outputForm.value = JSON.stringify(data, null, 4);
-
-    // 👇️ "response status is: 200"
-    console.log('response status is: ', status);
-
-    return data;
-  } catch (error) {
-    // TODO: read errors from server api
-    console.log('unexpected error: ', error);
-    outputForm.value = "Unexpected error, please try again";
-  }
+  // on error, 
+   if(!response.success){
+    hasError.value = true;
+   }
 }
 
 /**
@@ -45,6 +26,7 @@ async function evaluateInput() {
  */
 watch(inputForm, async () => {
   outputForm.value= "";
+  hasError.value = false;
 })
 </script>
 
@@ -79,7 +61,8 @@ watch(inputForm, async () => {
 
             <div class="terminal__output-container">
               <label for="" class="terminal__output-text">>></label>
-              <input type="text" v-model="outputForm" disabled class="terminal__output">
+              <input type="text" v-model="outputForm" disabled class="terminal__output"
+                :class="{ 'terminal__output--has-error': hasError }">
             </div>
           </section>
         </form>

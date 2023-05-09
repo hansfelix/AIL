@@ -70,10 +70,9 @@
         transform: translate(-30%, 10%);
     }
 
-    & // HEADER
-
-  // ------------------------------------------------
-  &__header {
+    // HEADER
+    // ------------------------------------------------
+    &__header {
         background: #e0e8f0;
         height: 1.875rem;
         border-radius: 0.5rem 0.5rem 0 0;
@@ -151,6 +150,10 @@
         background-color: transparent;
         padding: 0;
         font-size: 1rem;
+    }
+
+    &__output--has-error{
+        color: #cb6565;
     }
 
     &__output-text {
