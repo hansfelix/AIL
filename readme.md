@@ -23,11 +23,11 @@ Once you're set up, you can visit default URL`http://localhost:3000`. There is a
 This repo is a solution for [aimo code challenge](https://github.com/aimo/challenges/tree/main):
 
 ### TODO
-- [ ] Frontend: handle bad request or server errors
+- [x] Frontend: handle bad request or server errors
+- [x] Separate runtime in another npm worspace packages
 - [ ] Add env vars for deployment
 - [ ] Complete tests definition
 - [ ] Backend: use lang as global types 
-- [ ] Separate runtime in another npm worspace packages
 - [ ] Frontend: add clouds for the bottom
 - [ ] Frontend: improve background, create a component and render elements with svg and html
 - [ ] Improve Accesibility
