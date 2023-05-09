@@ -8,7 +8,7 @@ type ProxyResponse = {
 
 export const evaluate = async function (payload: any) {
   try {
-    const { data, status } = await axios.post<{ message: string }>(
+    const { data } = await axios.post<{ message: string }>(
       shipUrl,
       JSON.parse(payload),
       {

@@ -25,6 +25,7 @@ This repo is a solution for [aimo code challenge](https://github.com/aimo/challe
 ### TODO
 - [x] Frontend: handle bad request or server errors
 - [x] Separate runtime in another npm worspace packages
+- [ ] Improve client generation
 - [ ] Add env vars for deployment
 - [ ] Complete tests definition
 - [ ] Backend: use lang as global types 
