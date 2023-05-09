@@ -3,8 +3,6 @@ import { CreateApiDto } from './dto/create-api.dto';
 
 import { evaluate } from '@ail/core/dist/runtime/evaluation';
 import { Expression } from '@ail/core/dist/lang/Expressions';
-// import { evaluate } from './../runtime/src/runtime/evaluation';
-// import { Expression } from './../runtime/src/lang/Expressions';
 
 @Injectable()
 export class EvaluateService {

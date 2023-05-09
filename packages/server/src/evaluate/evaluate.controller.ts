@@ -10,7 +10,7 @@ export class EvaluateController {
 
   @Post()
   create(@Body() createApiDto: Expression) {
-    // Validate Payload
-    return this.evaluateService.create(createApiDto);
+    const response = this.evaluateService.create(createApiDto);
+    return { message: response };
   }
 }
